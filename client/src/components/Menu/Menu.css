@@ -1,0 +1,96 @@
+.ba-menu-btn {
+    height: 15px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .ba-menu-btn__line {
+    display: block;
+    height: 1px;
+    background-color: white;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  .ba-menu-btn__line:nth-child(2){
+    width: 50%;
+  
+  }
+  .ba-menu-btn__line:nth-child(3){
+    width: 23px;
+  }
+  .ba-menu-block {
+    position: fixed;
+    left: 0;
+    top: -100%;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+    background-color: black;
+    transform: translateY(0);
+    transition: transform .9s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  #menuOpen:checked ~ .ba-menu-block{
+    transform: translateY(100%);
+  }
+  .ba-menu-block:hover{
+    transform: none;
+  }
+  
+  .ba-menu{
+    display: flex;
+    justify-content: center;
+  }
+  .ba-menu__item {
+    color: #fff;
+    padding-right: 2em;
+    padding-left: 2em;
+    padding-bottom: 2em;
+    opacity: 0;
+    font-size: 1.5rem;
+    transform: translateY(-8px) scale(1.25);
+    transition: all .5s ease;
+    z-index: 50;
+  }
+  #menuOpen:checked ~ .ba-menu-block .ba-menu__item {
+    transform: none;
+    opacity: 1;
+  }
+  #menuOpen:checked ~ .ba-menu-block .ba-menu__item:first-child{
+    transition-delay: .7s;
+  }
+  #menuOpen:checked ~ .ba-menu-block .ba-menu__item:nth-child(2){
+    transition-delay: .9s;
+  }
+  #menuOpen:checked ~ .ba-menu-block .ba-menu__item:nth-child(3){
+    transition-delay: 1.2s;
+  }
+  #menuOpen:checked ~ .ba-menu-block .ba-menu__item:nth-child(4){
+    transition-delay: 1.5s;
+  }
+  #menuOpen:checked ~ .ba-menu-block .ba-menu__item:nth-child(5){
+    transition-delay: 1.7s;
+  }
+  
+  .ba-menu__item:hover {
+    color: white;
+  }
+  .visually-hidden {
+    position: absolute;
+    left: -9999999px;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }

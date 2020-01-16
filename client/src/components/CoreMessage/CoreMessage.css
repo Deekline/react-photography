@@ -1,0 +1,28 @@
+.ba-core-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100%;
+    color: #af9f66;
+    text-transform: uppercase;
+}
+.ba-core-message > * {
+    margin: 0;
+    margin-bottom: 2rem;
+}
+.btn-large{
+    background: transparent;
+    border: 2px solid #fff;
+
+}
+.btn-large:hover{
+    background: #af9f66;
+}
+.ba-core-message__subtitle {
+    color: #fff
+}
+.ba-core-message__title {
+    text-transform: capitalize;
+}

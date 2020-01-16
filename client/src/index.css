@@ -1,21 +1,28 @@
-@import '~materialize-css/dist/css/materialize.min.css';
+@import "~materialize-css/dist/css/materialize.min.css";
 
-
-
-input.yellow-input{
-    border-bottom: 1px solid #ffffff !important;
-    box-shadow: 0 1px 0 0 #ffffff !important;
+#root {
+  background-color: rgba(0, 0, 0, 0.79);
+  z-index: 1000;
+}
+.wrapper {
+    background-image: url(http://max-themes.net/demos/oshine/oshine-demo/v7/upload/oshin-v7-home.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
-input.yellow-input + label {
-    color: #ffffff !important;
+.container {
+  height: 100vh;
+  position: relative;
 }
-
-input.yellow-input:focus + label {
-    color:  #ffeb3b !important;
+.ba-main {
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
 }
-
-input.yellow-input:focus {
-    border-bottom: 1px solid #ffeb3b !important;
-    box-shadow:  0 1px 0 0 #ffeb3b !important;
+.ba-main__header {
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 50px;
 }
