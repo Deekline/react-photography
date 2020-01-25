@@ -1,0 +1,18 @@
+.ba-book {
+    position: fixed;
+    right: 5%;
+    bottom: 10%;
+}
+
+.ba-book-button {
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.ba-book-button:hover {
+    background: #af9f66;
+}

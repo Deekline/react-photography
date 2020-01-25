@@ -1,0 +1,28 @@
+.ba-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(50,50,50,0.8);
+    z-index: 100;
+}
+
+.ba-modal__container {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 20%;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+.ba-modal__container > form > input{
+    color: white;
+    background-color: transparent !important;
+}
+.ba-modal__container > form > input:focus {
+    box-shadow: none !important;
+}

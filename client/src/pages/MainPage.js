@@ -1,34 +1,42 @@
-import React from "react";
+import React, { useState } from 'react';
 
-import { Menu } from "../components/Menu/Menu";
+
 import { CoreMessage } from "../components/CoreMessage/CoreMessage";
-import { SocialNetworks } from "../components/SocialNetworks/SocialNetworks";
+import { BookMe } from '../components/BookMe/BookMe';
+import { Modal } from '../components/Modal/Modal';
 
 
-export const MainPage = () => {
-  const coreMessageData = {
-    subtitle: 'we love',
-    title: 'photography',
-    button: 'flex',
-    description: 'flex'
+export const MainPage  = () =>  {
+  const images = [
+    'url(http://max-themes.net/demos/oshine/oshine-demo/v7/upload/newyork.jpg)',
+    'url(http://max-themes.net/demos/oshine/oshine-demo/v7/upload/oshin-v7-home.jpg)',
+    'url(http://max-themes.net/demos/oshine/oshine-demo/v7/upload/oshin-sf-0026-comp.jpg)'
+  ]
+const [isModalOpen, setIsModalOpen] = useState(false)
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen)
   }
 
-  return (
-    <div className='wrapper'>
-      <div className='container'>
-        <div className="ba-main container">
-          <div className='ba-main__header'>
-            <SocialNetworks />
-            <img src="http://max-themes.net/demos/oshine/oshine-demo/v7/upload/oshin-logo-new.png" alt="Logo" />
-            <Menu />
+  const coreMessageData = {
+      subtitle: 'we love',
+      title: 'photography',
+      button: 'flex',
+      description: 'flex'
+    }
+
+    return (
+      <div className='wrapper' style={{backgroundImage: `${images[1]}`}}>
+        {isModalOpen && <Modal toggleModel = {toggleModal}/> }
+        <div className='container'>
+          <div className="ba-main container">
+            <CoreMessage
+              buttonPath={'/portfolio'}
+              coreMessageData={coreMessageData}
+            />
           </div>
-          <CoreMessage
-            buttonPath={'/portfolio'}
-            coreMessageData={coreMessageData}
-          />
+          <BookMe toggleModal={toggleModal}/>
         </div>
       </div>
-    </div>
 
-  );
+    );
 };

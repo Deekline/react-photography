@@ -13,7 +13,7 @@
   .ba-menu-btn__line {
     display: block;
     height: 1px;
-    background-color: white;
+    background-color: #665b40;
     width: 100%;
     z-index: 10;
   }

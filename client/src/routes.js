@@ -1,37 +1,29 @@
 import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
-import { MainPage } from './pages/MainPage'
+import {Switch, Route, BrowserRouter as Router} from 'react-router-dom';
+
+import {MainPage} from './pages/MainPage';
 import { AdminPage } from "./pages/AdminPage";
 import { ContactUs } from "./pages/ContactUs";
-import { AuthPage } from "./pages/AuthPage";
+import {AuthPage}  from "./pages/AuthPage";
 import { Portfolio } from './pages/Portfolio'
+import AllMenu from './components/AllMenu/AllMenu';
 
 
-export const useRoutes = isAuthenticated => {
-  if (!isAuthenticated) {
+export const useRoutes = () => {
+
     return (
-      <Switch>
-        <Route path='/' exact>
-          <MainPage />
-        </Route>
-        <Route path='/portfolio'>
-          <Portfolio />
-        </Route>
-        <Route path='/contact'>
-          <ContactUs />
-        </Route>
-        <Route path='/auth'>
-          <AuthPage />
-        </Route>
-        <Redirect to='/' />
-      </Switch>
+      <Router>
+        <Switch>
+          <Route path='/auth' component={AuthPage} />
+          <Route path='/admin' component={AdminPage} />
+            <div>
+              <AllMenu exact/>
+              <Route path='/' component={MainPage} exact/>
+              <Route path='/portfolio' component={Portfolio} />
+              <Route path='/contact' component={ContactUs}/>
+            </div>
+        </Switch>
+      </Router>
+
     );
-  }
-  return (
-    <Switch>
-      <Route path='/admin' exact>
-        <AdminPage />
-      </Route>
-    </Switch>
-  );
 };
