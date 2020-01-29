@@ -1,0 +1,18 @@
+.ba-main__header {
+    display: flex;
+    position: absolute;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+}
+.ba-header__image {
+position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+@media (max-width: 970px) {
+    .ba-main__header {
+        justify-content: space-between;
+    }
+}

@@ -1,21 +1,46 @@
-import React from "react"
-
+import React, { useState } from 'react';
+import { useHttp } from '../hooks/http.hook';
 
 
 export const AuthPage = () => {
+  const location = window.location;
 
+  const { request } = useHttp();
+  const [ form, setForm ] = useState( {
+    email: '',
+    password: '',
+  } );
+
+  const handleChange = ( event ) => {
+    setForm( { ...form, [ event.target.name ]: event.target.value } );
+  };
+
+
+  const registerHandler = async ( e ) => {
+    e.preventDefault();
+    try {
+      const data = await request( '/api/auth/register', 'POST', { ...form } );
+      if ( data ) {
+        location.pathname = '/admin';
+      }
+
+    } catch ( e ) {
+      console.log( e.message );
+    }
+
+  };
 
 
   return (
-    <div className="row">
+    <div className="row ba-auth">
       <div className="col s6 offset-s3">
-        <h1>Authentification</h1>
+        <h1 className='ba-auth__title'>Authentication</h1>
         <div className="card transparent darken-1">
           <div className="card-content white-text">
 
-            <span className="card-title">Authentification</span>
+            <span className="card-title">Authentication</span>
 
-            <div>
+            <form onSubmit={ registerHandler }>
 
               <div className="input-field">
                 <input
@@ -24,6 +49,7 @@ export const AuthPage = () => {
                   type="email"
                   name="email"
                   className="yellow-input"
+                  onChange={ handleChange }
                 />
                 <label htmlFor="email">Email</label>
               </div>
@@ -34,26 +60,21 @@ export const AuthPage = () => {
                   id="password"
                   type="password"
                   name="password"
-                  className="yellow-input" />
+                  className="yellow-input"
+                  onChange={ handleChange }/>
                 <label htmlFor="password">Password</label>
               </div>
+              <button type='submit'
+                      className='btn-large'>
+                Login
+              </button>
+            </form>
 
-            </div>
-            <div className="card-action">
-              <button
-                className='btn yellow darken-4'
-              >
-                Enter
-              </button>
-              <button
-                className="btn grey lighten-1 black-text"
-              >
-                Registration
-              </button>
-            </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+
+
+};
