@@ -20,7 +20,8 @@ export const useRoutes = () => {
               <AllMenu exact/>
               <Route path='/' component={MainPage} exact/>
               <Route path='/portfolio' component={Portfolio} />
-              <Route path='/contact' component={ContactUs}/>
+              <Route path='/contact' component={ContactUs} />
+
             </div>
         </Switch>
       </Router>

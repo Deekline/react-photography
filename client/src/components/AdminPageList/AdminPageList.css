@@ -1,0 +1,9 @@
+.ba-adminPage__list {
+    color: white;
+    margin-top: 50px;
+}
+th {
+    text-align: center;
+    padding: 10px 20px;
+    border: 1px solid gray;
+}

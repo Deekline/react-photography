@@ -1,0 +1,26 @@
+.ba-form__input {
+    color: white;
+}
+
+
+input[type= textfield] {
+    display: flex;
+    background-color: transparent;
+    width: 100%;
+    margin-bottom: 20px;
+    padding-top:0;
+    padding-left: 0;
+    padding-bottom: 50px;
+    line-height: 1em;
+
+}
+
+.ba-contact__text {
+    margin-bottom: 50px;
+}
+
+@media (max-width: 700px) {
+    .ba-contact__text {
+        display: none;
+    }
+}

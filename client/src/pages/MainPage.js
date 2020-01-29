@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 
 
 import { CoreMessage } from "../components/CoreMessage/CoreMessage";
@@ -7,15 +7,15 @@ import { Modal } from '../components/Modal/Modal';
 
 
 export const MainPage  = () =>  {
-  const images = [
-    'url(http://max-themes.net/demos/oshine/oshine-demo/v7/upload/newyork.jpg)',
-    'url(http://max-themes.net/demos/oshine/oshine-demo/v7/upload/oshin-v7-home.jpg)',
-    'url(http://max-themes.net/demos/oshine/oshine-demo/v7/upload/oshin-sf-0026-comp.jpg)'
-  ]
+  const images = 'url(http://max-themes.net/demos/oshine/oshine-demo/v7/upload/oshin-v7-home.jpg)'
 const [isModalOpen, setIsModalOpen] = useState(false)
+
+
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen)
   }
+
+
 
   const coreMessageData = {
       subtitle: 'we love',
@@ -25,7 +25,7 @@ const [isModalOpen, setIsModalOpen] = useState(false)
     }
 
     return (
-      <div className='wrapper' style={{backgroundImage: `${images[1]}`}}>
+      <div className='wrapper' style={{background: `linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), ${images}`}}>
         {isModalOpen && <Modal toggleModel = {toggleModal}/> }
         <div className='container'>
           <div className="ba-main container">

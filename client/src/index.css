@@ -1,12 +1,18 @@
 @import "~materialize-css/dist/css/materialize.min.css";
 
 #root {
-  background-color: rgba(0, 0, 0, 0.79);
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: 1000;
+  opacity: 10;
 }
 .wrapper {
-    background-position: center;
-    background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+}
+
+.bg-wrapper {
+
 }
 
 .container {
@@ -53,4 +59,34 @@
 }
 .masonry-item:hover {
   filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .3));
+}
+
+.ba-contact__wrapper {
+  background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('http://max-themes.net/demos/oshine/oshine-demo/v7/upload/oshin-sf-0026-comp.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+}
+.ba-contact {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  text-align: center;
+}
+
+.ba-adminPage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ba-auth__title {
+  color: #ba6;
+}
+.ba-auth {
+  height: 100vh;
 }
